@@ -1,0 +1,38 @@
+@import './scss/config';
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+
+body {
+   background: $primary-color;
+   color: set-text-color($primary-color);
+   height: 100vh;
+   font-family: 'Source Code Pro', monospace;	
+   line-height: 1;
+}
+h1,h2,h3 {
+   font-weight: 400;
+}
+a {
+   color: set-text-color($primary-color);
+   text-decoration: none;
+}
+.text-secondary {
+   color: $secondary-color;
+}
+header {
+    // background-color: lighten($primary-color, 10%);
+}
+main {
+   height: 100%;
+   width: 100%;
+}
+footer {
+   background-color: darken($primary-color, 10%);
+   .footer-content {
+	   &__social-icon {
+		   margin: 0 auto;
+		   &__link {
+			   font-size: 2.25rem;
+		   }
+	   }
+   }
+}

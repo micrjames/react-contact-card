@@ -1,0 +1,71 @@
+@import '../../scss/config', '../../scss/res-mq', './menu-btn';
+
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	opacity: 0.98;
+	visibility: hidden;
+	&.open {
+	   visibility: visible;
+	}
+	.menu-nav {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		overflow: hidden;
+		background: $primary-color;
+		list-style-type: none;
+		padding-right: 1rem;
+		transform: translateY(-100%);
+		&.open {
+		   transform: translateY(0);
+		   @include transition-ease;
+		}
+		&__item {
+			&.active > .menu-nav__link {
+			   	color: $secondary-color;
+			}
+		}
+		&__link {
+		   display: inline-block;
+		   font-size: 2rem;
+		   text-transform: uppercase;
+		   padding: 2rem 0;
+		   font-weight: 400;
+		   &:hover {
+			  	color: $secondary-color;
+		   }
+		}
+	}
+	@for $i from 1 through 4 {
+	   .menu-nav__item:nth-child(#{$i}){
+		  transition-delay: ($i * 0.4s) + 0.15s;
+	   }
+	}
+}
+@include md {
+   .menu-btn {
+	  visibility: hidden;
+   }
+   .nav {
+	  visibility: visible;
+	  .menu-nav {
+		 display: block;
+		 transform: translateY(0);
+		 height: 100%;
+		 background: transparent;
+		 text-align: right;
+		 &__item {
+			display: inline;
+			padding-right: 1.5rem;
+		 }
+		 &__link {
+			font-size: 1.5rem;
+		 }
+	  }
+   }
+}
