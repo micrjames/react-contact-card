@@ -4,7 +4,6 @@
 body {
    background: $primary-color;
    color: set-text-color($primary-color);
-   height: 100vh;
    font-family: 'Source Code Pro', monospace;	
    line-height: 1;
 }
@@ -18,21 +17,28 @@ a {
 .text-secondary {
    color: $secondary-color;
 }
-header {
-    // background-color: lighten($primary-color, 10%);
-}
-main {
-   height: 100%;
-   width: 100%;
-}
-footer {
-   background-color: darken($primary-color, 10%);
-   .footer-content {
-	   &__social-icon {
-		   margin: 0 auto;
-		   &__link {
-			   font-size: 2.25rem;
-		   }
-	   }
+#app-container {
+   margin: 5% auto;
+   width: 60vw;
+   border-radius: 0 0 15px 15px;
+   @include box-shadow(10px, 5px, 15px, 5px, rgb(0 0 0 / 0.5), false);
+   header {
+	   // background-color: lighten($primary-color, 10%);
+   }
+   main {
+	  width: 100%;
+   }
+   footer {
+	  border-radius: 0 0 15px 15px;
+	  width: 100%;
+	  background-color: darken($primary-color, 10%);
+	  .footer-content {
+		  &__social-icon {
+			  margin: 0 auto;
+			  &__link {
+				  font-size: 2.25rem;
+			  }
+		  }
+	  }
    }
 }
